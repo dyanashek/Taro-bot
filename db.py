@@ -18,5 +18,5 @@ try:
 except:
     logging.error('Users table already exists.')
 
-# cursor.execute("DELETE FROM users WHERE id<>10000")
-# database.commit()
+cursor.execute("DELETE FROM users WHERE id<>10000")
+database.commit()
