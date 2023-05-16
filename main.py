@@ -378,16 +378,15 @@ def handle_text(message):
                         reply_markup=keyboards.enter_birthday_keyboard(),
                         )
 
-
-@bot.message_handler(content_types=['photo'])
-def handle_text(message):
-    print(message)
+# to get image id
+# @bot.message_handler(content_types=['photo'])
+# def handle_text(message):
+#     print(message)
 
 
 if __name__ == '__main__':
-    bot.polling(timeout=80)
-    # while True:
-    #     try:
-    #         bot.polling()
-    #     except:
-    #         pass
+    while True:
+        try:
+            bot.polling()
+        except:
+            pass

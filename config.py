@@ -9,7 +9,7 @@ TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 MANAGER_ID = '877069241' # change 334457950
 
 # bot's ID
-BOT_ID = '6119183111' # change
+BOT_ID = '6119183111' # change 6112723384
 
 # manager's username
 MANAGER_USERNAME = 'AnnaVYakovleva'
