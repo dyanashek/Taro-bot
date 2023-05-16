@@ -6,19 +6,19 @@ load_dotenv()
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 # manager's id (redirect users to him)
-MANAGER_ID = '877069241' # change 334457950
+MANAGER_ID = os.getenv('MANAGER_ID')
 
 # bot's ID
-BOT_ID = '6119183111' # change 6112723384
+BOT_ID = os.getenv('BOT_ID')
 
 # manager's username
-MANAGER_USERNAME = 'AnnaVYakovleva'
+MANAGER_USERNAME = os.getenv('MANAGER_USERNAME')
 
 # instagram link
-INSTAGRAM_LINK = 'https://instagram.com/yakovleva.anna.taro'
+INSTAGRAM_LINK = os.getenv('INSTAGRAM_LINK')
 
 # telegram channel link
-TELEGRAM_CHANNEL_LINK = 'https://t.me/anyavtarot'
+TELEGRAM_CHANNEL_LINK = os.getenv('TELEGRAM_CHANNEL_LINK')
 
 # id of image that displays in text
 IMAGE_ID = 'AgACAgIAAxkBAAIIX2RiMdB3_Qtz-yKa2j9RfrMP-HKqAAI_0TEb3cARSwPEL76-G6FVAQADAgADeQADLwQ' # change

@@ -68,16 +68,16 @@ def start_message(message):
                             parse_mode='Markdown',
                             )
             
-        # if user allowed to fill the form
-        if fill_form_flag:
-            first_name = message.from_user.first_name
-            reply_text, keyboard = functions.name_response(first_name)
+    # if user allowed to fill the form
+    if fill_form_flag:
+        first_name = message.from_user.first_name
+        reply_text, keyboard = functions.name_response(first_name)
 
-            bot.send_message(chat_id=chat_id,
-                                text=reply_text,
-                                reply_markup=keyboard,
-                                parse_mode='Markdown',
-                                )
+        bot.send_message(chat_id=chat_id,
+                            text=reply_text,
+                            reply_markup=keyboard,
+                            parse_mode='Markdown',
+                            )
             
 
 @bot.callback_query_handler(func = lambda call: True)
@@ -129,21 +129,21 @@ def callback_query(call):
                                   parse_mode='Markdown',
                                   )
                 
-            # if user allowed to fill the form
-            if fill_form_flag:
-                first_name = call.from_user.first_name
-                reply_text, keyboard = functions.name_response(first_name)
+        # if user allowed to fill the form
+        if fill_form_flag:
+            first_name = call.from_user.first_name
+            reply_text, keyboard = functions.name_response(first_name)
 
-                try:
-                    bot.delete_message(chat_id=chat_id, message_id=message_id)
-                except:
-                    pass
+            try:
+                bot.delete_message(chat_id=chat_id, message_id=message_id)
+            except:
+                pass
 
-                bot.send_message(chat_id=chat_id,
-                                  text=reply_text,
-                                  reply_markup=keyboard,
-                                  parse_mode='Markdown',
-                                  )
+            bot.send_message(chat_id=chat_id,
+                                text=reply_text,
+                                reply_markup=keyboard,
+                                parse_mode='Markdown',
+                                )
     
     elif query == 'confirm':
         info_category = call_data[1]
@@ -377,6 +377,7 @@ def handle_text(message):
                         parse_mode='Markdown',
                         reply_markup=keyboards.enter_birthday_keyboard(),
                         )
+
 
 # to get image id
 # @bot.message_handler(content_types=['photo'])
