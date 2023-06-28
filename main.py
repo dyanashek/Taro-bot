@@ -1,6 +1,5 @@
 import telebot
 import logging
-import gspread
 import datetime
 import threading
 
@@ -9,7 +8,7 @@ import utils
 import functions
 import keyboards
 
-logging.basicConfig(level=logging.INFO, 
+logging.basicConfig(level=logging.ERROR, 
                     filename="py_log.log", 
                     filemode="w", 
                     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -19,11 +18,6 @@ bot = telebot.TeleBot(config.TELEGRAM_TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    # bot.send_message(chat_id=message.chat.id,
-    #                  text=config.MAIN_TEXT,
-    #                  parse_mode='MarkdownV2',
-    #                  reply_markup=keyboards.main_keyboard(),
-    #                  )
     bot.send_photo(chat_id=message.chat.id,
                    photo=config.IMAGE_ID,
                    caption=config.MAIN_TEXT,
@@ -268,7 +262,7 @@ def callback_query(call):
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
-    """Handles message with type text. Gets identifier if user wants to add referral."""
+    """Handles message with type text."""
     
     if (message.reply_to_message is not None) and\
     (str(message.reply_to_message.from_user.id) == config.BOT_ID):

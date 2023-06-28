@@ -23,6 +23,9 @@ TELEGRAM_CHANNEL_LINK = os.getenv('TELEGRAM_CHANNEL_LINK')
 # id of image that displays in text
 IMAGE_ID = 'AgACAgIAAxkBAAIIX2RiMdB3_Qtz-yKa2j9RfrMP-HKqAAI_0TEb3cARSwPEL76-G6FVAQADAgADeQADLwQ' # change
 
+SPREAD_NAME = 'the-inside'
+LIST_NAME = 'taro'
+
 # text with terms (start text)
 MAIN_TEXT = '''
             \nРада приветствовать\!\

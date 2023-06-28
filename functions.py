@@ -11,8 +11,8 @@ import config
 bot = telebot.TeleBot(config.TELEGRAM_TOKEN)
 
 service_acc = gspread.service_account(filename='service_account.json')
-sheet = service_acc.open('Код Таро даты рождения')
-work_sheet = sheet.worksheet('Заявки')
+sheet = service_acc.open(config.SPREAD_NAME)
+work_sheet = sheet.worksheet(config.LIST_NAME)
 
 def is_new_user(user_id):
     """Checks if user already in database. 
@@ -31,6 +31,7 @@ def is_new_user(user_id):
         user = user[0]
     
     return user
+
 
 def add_user(user_id, user_username):
     """Adds a new user to database."""
@@ -58,6 +59,7 @@ def is_form_filled(info):
         return False
     
     return True
+
 
 def set_to_none(user_id):
     """Sets all filled fields to None."""
@@ -115,7 +117,6 @@ def enter_response(info_category):
         reply_text = config.FAMILY_NAME_MESSAGE
 
     return reply_text, keyboard
-
 
 
 def fill_form_info(info_category, info, user_id):
@@ -210,6 +211,7 @@ def notify_manager(user_id):
                              )
     except:
         pass
+
 
 def color_spread(user_id):
     """Colors the row to green after answering the request."""
